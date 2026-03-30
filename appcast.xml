@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:sparkle='http://www.andymatuschak.org/xml-namespaces/sparkle'>
+  <channel>
+    <title>Shamon Updates</title>
+    <link>https://shamon.net/</link>
+    <description>Release feed for Shamon macOS updates.</description>
+    <item>
+      <title>Version 0.0.1</title>
+      <link>https://shamon.net/</link>
+      <pubDate>Mon, 30 Mar 2026 00:40:59 +0000</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.15.0</sparkle:minimumSystemVersion>
+      <enclosure url='https://download.shamon.net/version/0.0.1+2' type='application/octet-stream' length='21229620' sparkle:edSignature='tiBH1/Mhs5K/2G/QF1jj1nIfAeFPJ0LL1Lfk9VoI9v1FFplFrFoadFTBOl85QGvOouL2SVoplRsxXvxfQqABCw=='/>
+    </item>
+  </channel>
+</rss>
