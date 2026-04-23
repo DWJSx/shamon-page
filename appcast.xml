@@ -7,6 +7,15 @@
     <item>
       <title>Version 0.0.1</title>
       <link>https://shamon.net/</link>
+      <pubDate>Thu, 23 Apr 2026 12:37:24 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.15.0</sparkle:minimumSystemVersion>
+      <enclosure url='https://download.shamon.net/version/0.0.1+5' type='application/octet-stream' length='22362164' sparkle:edSignature='DC/93VTZgZF5t3r8vZLCIZ6oac62D6umo9nTW0YSjUY8U3e8BQcI8ZzvKYFJN7RweTqXkJip8rzV7GHgzI51Cg=='/>
+    </item>
+    <item>
+      <title>Version 0.0.1</title>
+      <link>https://shamon.net/</link>
       <pubDate>Mon, 20 Apr 2026 15:33:27 +0000</pubDate>
       <sparkle:version>4</sparkle:version>
       <sparkle:shortVersionString>0.0.1</sparkle:shortVersionString>
