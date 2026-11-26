@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shamon — Local Companion App &amp; Agent-Native CLI</title>
+    <title>Shamon — Local Companion App for AI Agents</title>
     <meta
       name="description"
-      content="Shamon is a macOS desktop companion app and standalone CLI that connects user-approved Chrome sites, databases, SSH sessions, and sandboxed JavaScript adapters."
+      content="Shamon is a macOS companion app that gives local AI agents controlled access to user-approved Chrome sites, databases, SSH sessions, and sandboxed commands."
     />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="128x128" href="assets/icon-128.png" />
@@ -18,8 +18,8 @@
         <a class="wordmark" href="/">Shamon</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="#capabilities">Capabilities</a>
+          <a href="#get-started">Get Started</a>
           <a href="#chrome-extension">Chrome Connector</a>
-          <a href="#quickstart">Quick Start</a>
           <a href="#security">Security</a>
           <a href="#support">Support</a>
         </nav>
@@ -37,17 +37,17 @@
         <div class="container">
           <div class="eyebrow">
             <span class="status-dot" aria-hidden="true"></span>
-            <span>macOS companion app &amp; agent-native CLI</span>
+            <span>macOS companion app for local AI agents</span>
           </div>
           <h1>
-            Controlled local access to Chrome, databases, and SSH for developer
-            workflows.
+            Give your AI agent safe, local access to Chrome, databases, and SSH.
           </h1>
           <p class="hero-lead">
-            Shamon runs on your Mac and exposes a standalone CLI backed by the
-            Shamon desktop runtime. Connect user-approved Chrome origins, run
-            sandboxed JavaScript adapters, query PostgreSQL, MySQL, and
-            ClickHouse, and keep secrets local.
+            Configure your approved Chrome sites, databases, and SSH hosts once
+            in the Shamon macOS app. Your coding agents call the local
+            <code class="inline-code">shamon</code> CLI automatically—while
+            credentials stay in macOS Keychain and permissions stay under your
+            control.
           </p>
           <div class="hero-actions">
             <a
@@ -67,22 +67,32 @@
             <a href="privacy.html">Privacy Policy</a>
           </div>
 
-          <div class="code-frame">
-            <div class="code-frame-header">
-              <span class="code-frame-label">shamon-cli</span>
-              <button
-                class="copy-btn"
-                type="button"
-                data-copy-target="hero-cli"
-              >
-                Copy
-              </button>
+          <div class="flow-strip" aria-label="How Shamon works">
+            <div class="flow-step">
+              <span class="flow-label">01 · You configure</span>
+              <h2>Manage access in Shamon</h2>
+              <p>
+                Approve specific Chrome origins, connect PostgreSQL, MySQL, or
+                ClickHouse, and configure SSH in the desktop app.
+              </p>
             </div>
-            <pre id="hero-cli"><span class="code-prompt">$ </span>shamon doctor
-<span class="code-prompt">$ </span>shamon request https://example.com/api
-<span class="code-prompt">$ </span>shamon browser research open https://example.com/
-<span class="code-prompt">$ </span>shamon browser research network
-<span class="code-prompt">$ </span>shamon database execute primary --sql 'SELECT * FROM users LIMIT 10'</pre>
+            <div class="flow-step">
+              <span class="flow-label">02 · Agent calls</span>
+              <h2>AI discovers <code>shamon</code></h2>
+              <p>
+                Your AI agent inspects available capabilities and calls
+                <code>shamon</code> over local loopback—no manual command
+                memorization required.
+              </p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">03 · Local boundaries</span>
+              <h2>Secrets never leave your Mac</h2>
+              <p>
+                Requests run only on approved origins, database passwords stay
+                inside the runtime, and access can be revoked anytime.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -91,33 +101,22 @@
         <div class="container">
           <div class="section-header">
             <span class="section-label">Capabilities</span>
-            <h2>One local runtime for browser, data, and command workflows</h2>
+            <h2>Everything an agent needs to work with real environments</h2>
             <p>
-              Built for developers and coding agents that need deterministic,
-              authenticated access to real environments without scattering
-              credentials.
+              Bridge authenticated browser sessions, databases, and servers
+              through one audited local runtime instead of pasting secrets into
+              prompts.
             </p>
           </div>
 
           <div class="grid-2">
             <article class="card">
-              <span class="card-tag">Browser</span>
-              <h3>Browser-backed requests &amp; network inspection</h3>
+              <span class="card-tag">Chrome Connector</span>
+              <h3>Authenticated browser requests &amp; network inspection</h3>
               <p>
-                Execute HTTP requests using your real Chrome session and run
-                explicit investigation sessions that retain up to 10,000 network
-                requests for inspection—strictly limited to origins you approve.
-              </p>
-            </article>
-
-            <article class="card">
-              <span class="card-tag">Adapters</span>
-              <h3>Sandboxed JavaScript commands</h3>
-              <p>
-                Add single-file Workers-style adapters under
-                <code>~/.shamon/commands/</code>. Commands execute in an
-                isolated QuickJS-NG context with no filesystem, process, socket,
-                or <code>eval</code> access.
+                Let agents run HTTP requests with your live Chrome session or
+                inspect network traffic after you interact with an approved
+                page—no fragile UI clicking.
               </p>
             </article>
 
@@ -125,35 +124,45 @@
               <span class="card-tag">Databases</span>
               <h3>PostgreSQL, MySQL, and ClickHouse</h3>
               <p>
-                Configure database connections once in the Shamon app and run
-                queries from the standalone CLI through the bundled Toolbox
-                binary—database secrets stay out of CLI processes.
+                Store database connections once in Shamon. Agents query your
+                databases through the local runtime and bundled Toolbox binary
+                without ever reading raw passwords.
               </p>
             </article>
 
             <article class="card">
-              <span class="card-tag">Infrastructure</span>
-              <h3>Managed SSH &amp; Keychain vault</h3>
+              <span class="card-tag">SSH</span>
+              <h3>Managed command-only SSH sessions</h3>
               <p>
-                Run managed command-only SSH sessions and store connector
-                credentials in macOS Keychain. Every local CLI request is
-                authenticated against the loopback RPC server.
+                Expose preconfigured SSH targets with explicit execution
+                timeouts, incremental output reading, and interruption controls,
+                backed by macOS Keychain.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="card-tag">Custom commands</span>
+              <h3>Sandboxed JavaScript adapters</h3>
+              <p>
+                Turn repeated site workflows into reusable commands under
+                <code>~/.shamon/commands/</code>. Adapters run in isolated
+                QuickJS-NG with no filesystem, socket, or <code>eval</code>
+                access.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="chrome-extension">
+      <section class="section" id="get-started">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">Chrome Connector</span>
-            <h2>Link Chrome to your local Shamon app</h2>
+            <span class="section-label">Get Started</span>
+            <h2>Set up once, then let your AI agent handle the CLI</h2>
             <p>
-              Shamon Connector is the companion Chrome extension for
-              browser-backed requests, command-requested
-              <code class="inline-code">localStorage</code> reads, and explicit
-              network investigation sessions.
+              You manage connections and approvals in the desktop app; your
+              coding agent discovers and invokes
+              <code class="inline-code">shamon</code> on its own.
             </p>
           </div>
 
@@ -162,29 +171,105 @@
               <span class="step-number">1</span>
               <h3>Install the macOS app</h3>
               <p>
-                Download and launch the notarized Shamon macOS release. Open
-                <strong>General → Chrome Extension</strong> to view your local
+                Download the notarized DMG, launch Shamon, and enable the
+                <code>shamon</code> CLI link in Settings so your local agents
+                can find it.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="step-number">2</span>
+              <h3>Connect your resources</h3>
+              <p>
+                Link the Chrome Connector extension for approved websites, or
+                add your PostgreSQL, MySQL, ClickHouse, and SSH connections in
+                the app.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="step-number">3</span>
+              <h3>Ask your AI agent</h3>
+              <p>
+                Tell your coding agent to use <code>shamon</code>. It discovers
+                the catalog automatically and executes only within the
+                permissions you granted.
+              </p>
+            </article>
+          </div>
+
+          <div class="prompt-panel">
+            <div class="prompt-panel-header">
+              Example prompts you can give your AI agent
+            </div>
+            <ul class="prompt-list">
+              <li>
+                <span>
+                  “Use Shamon to inspect the API calls on this dashboard and
+                  package a reusable read command.”
+                </span>
+                <span class="prompt-tag">Browser</span>
+              </li>
+              <li>
+                <span>
+                  “Query the primary database via Shamon and check why today’s
+                  sync count dropped.”
+                </span>
+                <span class="prompt-tag">Database</span>
+              </li>
+              <li>
+                <span>
+                  “Check the service status on the staging host through Shamon
+                  SSH.”
+                </span>
+                <span class="prompt-tag">SSH</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="chrome-extension">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Chrome Connector</span>
+            <h2>Companion Chrome extension setup</h2>
+            <p>
+              Shamon Connector connects Chrome to the local Shamon app for
+              user-approved browser requests, command-requested
+              <code class="inline-code">localStorage</code> reads, and explicit
+              network investigation sessions.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <span class="step-number">1</span>
+              <h3>Copy your local token</h3>
+              <p>
+                In the Shamon macOS app, open
+                <strong>General → Chrome Extension</strong> to see your local
                 port and copy the generated token.
               </p>
             </article>
 
             <article class="card">
               <span class="step-number">2</span>
-              <h3>Configure Shamon Connector</h3>
+              <h3>Configure allowed origins</h3>
               <p>
-                Click the extension icon in Chrome, enter
-                <code>127.0.0.1:&lt;port&gt;</code>, paste the token, and list
-                the exact origin patterns you want to allow.
+                Open Shamon Connector settings in Chrome, enter
+                <code>127.0.0.1:&lt;port&gt;</code>, paste the token, and add
+                the exact origin patterns you want to approve.
               </p>
             </article>
 
             <article class="card">
               <span class="step-number">3</span>
-              <h3>Approve access &amp; run</h3>
+              <h3>Approve &amp; revoke anytime</h3>
               <p>
-                Review the privacy notice, grant Chrome site access for those
-                origins, and run <code>shamon request</code> or
-                <code>shamon browser research</code> from Terminal.
+                Review the privacy notice and grant Chrome site access. Removing
+                an origin or clicking <strong>Disconnect and clear data</strong>
+                immediately revokes access.
               </p>
             </article>
           </div>
@@ -192,7 +277,7 @@
           <div class="callout">
             <div>
               <h3 class="callout-title">
-                Read the Shamon Connector Privacy Policy
+                Shamon Connector Privacy Policy
               </h3>
               <p>
                 Browser data is sent only over local loopback to your Shamon
@@ -201,75 +286,8 @@
             </div>
             <div class="callout-actions">
               <a class="btn btn-secondary" href="privacy.html">
-                Privacy Policy
+                Read Privacy Policy
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="quickstart">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label">Quick Start</span>
-            <h2>Inspect APIs and package reusable commands</h2>
-            <p>
-              Install the <code class="inline-code">shamon</code> CLI symlink
-              from Settings, inspect a live browser workflow, then turn it into
-              a validated local command.
-            </p>
-          </div>
-
-          <div class="grid-2">
-            <div class="code-frame">
-              <div class="code-frame-header">
-                <span class="code-frame-label">Terminal</span>
-                <button
-                  class="copy-btn"
-                  type="button"
-                  data-copy-target="qs-cli"
-                >
-                  Copy
-                </button>
-              </div>
-              <pre id="qs-cli"><span class="code-comment"># Check app, CLI, and extension health</span>
-<span class="code-prompt">$ </span>shamon doctor
-
-<span class="code-comment"># Open an approved site and inspect network traffic</span>
-<span class="code-prompt">$ </span>shamon browser research open https://example.com/
-<span class="code-prompt">$ </span>shamon browser research network
-<span class="code-prompt">$ </span>shamon browser research close
-
-<span class="code-comment"># Validate a custom JavaScript adapter</span>
-<span class="code-prompt">$ </span>shamon check ~/.shamon/commands/demo/get.js</pre>
-            </div>
-
-            <div class="code-frame">
-              <div class="code-frame-header">
-                <span class="code-frame-label">~/.shamon/commands/demo/get.js</span>
-                <button
-                  class="copy-btn"
-                  type="button"
-                  data-copy-target="qs-adapter"
-                >
-                  Copy
-                </button>
-              </div>
-              <pre id="qs-adapter">export const command = {
-  summary: "Read a JSON resource",
-  access: "read",
-  arguments: [{ name: "id", required: true }],
-  hosts: ["example.com"],
-  example: "shamon demo get 123"
-};
-
-export default {
-  async fetch(request) {
-    const { args } = await request.json();
-    const res = await fetch(`https://example.com/api/${args.id}`);
-    return Response.json(await res.json());
-  }
-};</pre>
             </div>
           </div>
         </div>
@@ -281,8 +299,8 @@ export default {
             <span class="section-label">Security &amp; Privacy</span>
             <h2>Explicit permissions and local-only boundaries</h2>
             <p>
-              Shamon is designed so you stay in control of which sites,
-              credentials, and commands are accessible at all times.
+              Shamon is built so you decide exactly which sites, credentials,
+              and commands your local agents can reach.
             </p>
           </div>
 
@@ -368,9 +386,7 @@ export default {
       <div class="container footer-inner">
         <span>Shamon · shamon.net</span>
         <div class="footer-links">
-          <a href="https://download.shamon.net/latest">
-            Download macOS
-          </a>
+          <a href="https://download.shamon.net/latest">Download macOS</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="appcast.xml">Release Feed</a>
           <a
@@ -419,25 +435,6 @@ export default {
           // Keep static fallback version label.
         }
       })();
-
-      // Copy code snippets.
-      document.querySelectorAll("[data-copy-target]").forEach((button) => {
-        button.addEventListener("click", async () => {
-          const target = document.getElementById(button.dataset.copyTarget);
-          if (!target) return;
-          const rawText = target.innerText.replace(/^\$ /gm, "");
-          try {
-            await navigator.clipboard.writeText(rawText);
-            const original = button.textContent;
-            button.textContent = "Copied";
-            setTimeout(() => {
-              button.textContent = original;
-            }, 1400);
-          } catch {
-            // Clipboard unavailable in insecure context.
-          }
-        });
-      });
     </script>
   </body>
 </html>
