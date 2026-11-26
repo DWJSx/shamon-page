@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shamon Connector Privacy Policy</title>
+    <meta
+      name="description"
+      content="Privacy Policy for the Shamon Connector Chrome extension."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/icon-128.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="/">Shamon</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#capabilities">Capabilities</a>
+          <a href="/#chrome-extension">Chrome Connector</a>
+          <a href="/#security">Security</a>
+          <a href="privacy.html" aria-current="page">Privacy Policy</a>
+          <a href="/#support">Support</a>
+        </nav>
+        <a
+          class="btn btn-primary btn-sm"
+          href="https://download.shamon.net/latest"
+        >
+          Download for macOS
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <article class="prose">
+        <h1>Shamon Connector Privacy Policy</h1>
+        <p class="updated">Effective November 17, 2026</p>
+
+        <p>
+          Shamon Connector links Chrome to the Shamon companion app running on
+          the same device. It processes browser data only when needed for a
+          user-initiated browser request or investigation session and only for
+          origins the user has entered and approved.
+        </p>
+
+        <h2>Data processed</h2>
+        <p>The extension may process:</p>
+        <ul>
+          <li>approved page URLs and titles;</li>
+          <li>request and response URLs, methods, status codes, and headers;</li>
+          <li>request and response bodies requested by the user;</li>
+          <li>
+            individual website localStorage values explicitly requested by a
+            command, including authentication tokens used to construct API
+            headers; and
+          </li>
+          <li>
+            connection settings, including a local Shamon address, a locally
+            stored access token, the approved-origin list, and the user's
+            consent choice.
+          </li>
+        </ul>
+        <p>
+          Website traffic can contain website content, browsing activity,
+          authentication information, personal information, or communications.
+          Shamon Connector does not inspect sites outside the approved-origin
+          list.
+        </p>
+
+        <h2>How the data is used</h2>
+        <p>
+          Browser data is used solely to perform the extension's single purpose:
+          executing browser-backed requests and showing network details to the
+          user through the local Shamon app. It is not used for advertising,
+          profiling, credit decisions, or unrelated analytics.
+        </p>
+
+        <h2>Sharing and transmission</h2>
+        <p>
+          The extension sends browser results only over the device's loopback
+          interface to the Shamon app selected by the user. The extension
+          developer does not receive this data. The extension does not sell user
+          data or share it with advertisers, data brokers, or other third
+          parties.
+        </p>
+
+        <h2>Storage and retention</h2>
+        <p>
+          Connection settings, the access token, and the approved-origin list
+          are stored locally by Chrome on this device and are not placed in
+          Chrome Sync. The token is used to authenticate the local Shamon
+          connection and is removed by “Disconnect and clear data” or
+          uninstalling the extension. Network history is retained in extension
+          memory only for the active investigation session, up to the
+          extension's bounded session limit. Data deliberately exported by the
+          user through Shamon is controlled by the user and the Shamon app.
+        </p>
+        <p>
+          Website localStorage reads are read-only. Their values pass through
+          memory to the local command runtime and are not copied into extension
+          settings or logs. The extension closes each temporary read tab on
+          completion, error, or timeout.
+        </p>
+
+        <h2>User control and deletion</h2>
+        <p>
+          Users choose every eligible origin through the extension settings and
+          may remove an origin at any time. The “Disconnect and clear data”
+          action revokes optional site access and deletes locally stored
+          extension settings. Uninstalling the extension also deletes its local
+          Chrome storage.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+          The companion connection is restricted to the local loopback interface
+          and authenticated with a user-provided token. The extension accepts
+          only packaged command types and does not download or execute remote
+          code. Approved website origins may use HTTP or HTTPS. HTTP is provided
+          for development services that do not offer TLS; its traffic is not
+          encrypted and should be used only with trusted services. Redirects
+          outside the approved origin list are rejected.
+        </p>
+
+        <h2>Limited Use</h2>
+        <p>
+          The use of information received from Google APIs adheres to the
+          <a
+            href="https://developer.chrome.com/docs/webstore/program-policies/user-data/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chrome Web Store User Data Policy</a
+          >, including the Limited Use requirements.
+        </p>
+
+        <h2>Changes and contact</h2>
+        <p>
+          Material changes to these practices will be disclosed before the
+          changed data handling begins. Questions about this policy can be sent
+          through the support channel published at
+          <a href="/#support">shamon.net</a>.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Shamon · shamon.net</span>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="appcast.xml">Release Feed</a>
+          <a
+            href="https://github.com/DWJSx/shamon-page/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Support
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
