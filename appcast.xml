@@ -5,6 +5,15 @@
     <link>https://shamon.net/</link>
     <description>Release feed for Shamon macOS updates.</description>
     <item>
+      <title>Version 0.1.0</title>
+      <link>https://shamon.net/</link>
+      <pubDate>Fri, 27 Nov 2026 04:08:22 +0000</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.15.0</sparkle:minimumSystemVersion>
+      <enclosure url='https://download.shamon.net/version/0.1.0+9' type='application/octet-stream' length='133345647' sparkle:edSignature='dK3kCQANeouUk0oOeYPQhYJVS2KyVqVMYcpvqazuA4AxrFNIhg0n29TJjMx9kBC05JxkMnKjQ8YXvig1Z8jNDA=='/>
+    </item>
+    <item>
       <title>Version 0.0.1</title>
       <link>https://shamon.net/</link>
       <pubDate>Wed, 29 Apr 2026 10:03:00 +0000</pubDate>
